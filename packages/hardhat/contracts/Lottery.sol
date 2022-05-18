@@ -37,6 +37,10 @@ contract Lottery {
     return lotteryProfit;
   }
 
+  function getWinners() public view returns (Winner[] memory) {
+    return winners;
+  }
+
   function gamble(string memory name) payable public {
     // check if not full
 

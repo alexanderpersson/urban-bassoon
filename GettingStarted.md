@@ -4,6 +4,7 @@
 - solidity extension https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity
 - yarn
 - node v14 (ish)
+- metamask (chrome plugin)
 
 # Running the code
 
@@ -52,14 +53,13 @@ If you run the site there is a tab named Debug Contract that is really neat for 
 `const result = await tx(writeContracts.YourContract.setPurpose(newPurpose)`
 
 ## Calling a function on contract and seding Ether
-`
-tx(writeContracts.YourContract.setPurpose("💵 Paying for this one!", {
-                  value: utils.parseEther("0.001"),
-                }),`
+
+` tx(writeContracts.YourContract.setPurpose("💵 Paying for this one!", { value: utils.parseEther("0.001"), }),`
 
 ## Convert eth to wei before sending to contract
-Solidity only has intergers, no floats. One eth is actually 1e18. To easy convert "real" numbers into lots of trailing zeroes use. 
+
+Solidity only has intergers, no floats. One eth is actually 1e18. To easy convert "real" numbers into lots of trailing zeroes use.
 `ethers.utils.parseEther("0.001")`
 
-Same goes other way, when contract returns number its a lot of numbers. 
+Same goes other way, when contract returns number its a lot of numbers.
 `ethers.utils.formatEther(crazyNumber)`
